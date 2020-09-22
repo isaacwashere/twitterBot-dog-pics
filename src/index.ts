@@ -1,8 +1,5 @@
-require('es6-promise').polyfill();
-require('isomorphic-fetch');
 import Twit = require('twit');
 import { listen } from './listen';
-import Unsplash from 'unsplash-js';
 import { createWinstonLogger } from './winston/winston';
 import { createTwitterClient } from './clients/create-twitter-client';
 import { createUnsplashClient } from './clients/create-unsplash-client';

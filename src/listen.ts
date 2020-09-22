@@ -7,10 +7,9 @@ import { replyWithError } from './utils/reply-tweet-error';
 
 export const listen = () => {
   const mentionStream = twitter.stream('statuses/filter', { track: TWITTER_MENTION });
-
   mentionStream.on('tweet', async (tweet: Twit) => {
     logger.debug('\n\nTWEET IS: ', tweet);
-    logger.info(`@${tweet.user.screen_name} wants a dog pic...`);
+    logger.debug(`@${tweet.user.screen_name} wants a dog pic...`);
     const dogPic = await handleGetDogPic();
     dogPic
       ? await replyWithPic(dogPic, tweet.id_str, tweet.user.screen_name)
