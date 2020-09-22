@@ -1,11 +1,12 @@
 import { postTweetWithImage } from './post-tweet-with-image';
+import { logger } from '../index';
 
 export const replyWithPic = async (pic: string, replyStatusId: string, user: string) => {
   try {
     const message = getGreeting();
     await postTweetWithImage(pic, replyStatusId, user, message);
   } catch (e) {
-    console.log(e);
+    logger.error(e);
   }
 };
 

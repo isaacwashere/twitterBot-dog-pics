@@ -1,4 +1,4 @@
-import { twitter } from '../index';
+import { twitter, logger } from '../index';
 import imageToBase64 from 'image-to-base64';
 import { replyWithError } from './reply-tweet-error';
 import { TwitMediaUploadData } from 'src/interfaces';
@@ -14,7 +14,7 @@ export const postTweetWithImage = async (
       return response.toString();
     })
     .catch(error => {
-      console.error(error);
+      logger.error(error);
       throw new Error(JSON.stringify(error));
     });
 
@@ -51,7 +51,7 @@ export const postTweetWithImage = async (
           await replyWithError(replyStatusId, user);
           throw new Error(JSON.stringify(postError));
         }
-        console.log(`Replied to: @${user}`);
+        logger.info(`Replied to: @${user}`);
       });
     });
   });

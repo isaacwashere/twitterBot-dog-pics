@@ -29,7 +29,8 @@
     "ts-node": "^9.0.0",
     "twit": "^2.2.11",
     "twitter": "^1.7.1",
-    "unsplash-js": "^6.3.0"
+    "unsplash-js": "^6.3.0",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/moment": "^2.13.0",
