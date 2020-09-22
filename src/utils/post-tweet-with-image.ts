@@ -41,6 +41,8 @@ export const postTweetWithImage = async (
         media_ids: [mediaIdStr],
         in_reply_to_status_id: replyStatusId,
       };
+      logger.debug('Params before posting tweet: ', { params });
+
       if (createError) {
         await replyWithError(replyStatusId, user);
         throw new Error(JSON.stringify(createError));
