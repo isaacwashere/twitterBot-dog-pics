@@ -72,11 +72,17 @@ export interface TwitUser {
 export interface TwitEntities {
   hashtags?: any | null[] | any | null;
   urls?: any | null[] | any | null;
-  user_mentions?: (TwitUserMentionsEntityEntity[] | any | null)[] | any | null;
+  user_mentions?: TwitUserMentionsEntityEntity[] | null;
   symbols?: any | null[] | any | null;
 }
 
-export interface TwitUserMentionsEntityEntity {}
+export interface TwitUserMentionsEntityEntity {
+  screen_name: string;
+  name: string;
+  id: string;
+  id_str: string;
+  indices: number[];
+}
 
 export interface UnsplashImage {
   id: string;
